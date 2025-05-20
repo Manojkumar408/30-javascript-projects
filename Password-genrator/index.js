@@ -9,7 +9,7 @@ const allchars = upperCase + lowerCase + number + symbol;
 function genrator() {
 
     let password = "";
-
+    
     password += upperCase[Math.floor(Math.random() * upperCase.length)];
     password += lowerCase[Math.floor(Math.random() * lowerCase.length)];
     password += number[Math.floor(Math.random() * number.length)];
@@ -21,8 +21,9 @@ function genrator() {
     inputBox.value = password;
 
 }
- function copyPassword(){
+
+function copyPassword() {
     inputBox.select();
     document.execCommand("copy");
 
- }
+}
