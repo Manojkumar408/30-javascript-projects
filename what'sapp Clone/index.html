@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .head {
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: space-between;
+            /* position: fixed; */
+        }
+
+        .whats {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+        }
+
+        .WA {
+            padding-left: 15px;
+        }
+
+        .head-icons {
+            margin-top: 15px;
+        }
+
+        .head-icons i {
+            padding: 0 15px;
+        }
+
+        .main {
+            /* width: 100%; */
+            display: flex;
+        }
+
+        i {
+            font-size: 20px;
+        }
+
+        .left-side {
+            background-color: #f8f9fa;
+            width: 5%;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            font-size: 18px;
+        }
+
+
+        .side-1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 280px;
+
+
+        }
+
+        .side-2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 35px;
+        }
+
+        .side-2 img {
+            border-radius: 50px;
+            object-fit: cover;
+            padding-bottom: 10px;
+        }
+
+        .right-side {
+            width: 95%;
+            display: flex;
+            border: 0.1px solid rgb(233, 230, 230);
+            border-radius: 10px;
+
+        }
+
+        .first-right-side {
+            width: 30%;
+            border-right: 1px solid gray;
+            padding: 5px;
+        }
+
+        .second-right-side {
+            width: 70%;
+            background-image: -webkit-image-set(beautiful-girl-photo_14);
+
+        }
+
+        .right-side-icons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 35px;
+        }
+
+        .bar-icon {
+            margin-left: 15px;
+        }
+
+        .search-icon {
+            display: flex;
+            align-items: center;
+            margin-left: 35px;
+            border-radius: 5px;
+            padding: 10px;
+            border-bottom: 4px solid green;
+            box-shadow: 0 2px 5px rgba(100, 100, 100, 0.2);
+
+        }
+
+        .search-icon input {
+            margin-left: 15px;
+            border: none;
+            outline: none;
+            font-size: 20px;
+        }
+
+        .chart-icon {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .chart-icon-2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px;
+            border: 0.1px solid rgb(233, 230, 230);
+        }
+
+        .chart-icon-2 img {
+            border-radius: 40px;
+
+        }
+
+        .chart-img {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .chart-icon img {
+            border-radius: 50px;
+            margin-right: 20px;
+            margin-left: -40px;
+        }
+
+        .time {
+            padding-left: 50px;
+        }
+
+        .matter-2 {
+            margin-left: 15px;
+        }
+
+        .center-box {
+            height: 68vh;
+            background-image: url("istockphoto-1403848173-612x612.jpg");
+            object-fit: cover;
+            z-index: 0;
+            opacity: 10px;
+
+        }
+
+        .final-input {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 10vh;
+            border-top: 0.5px solid rgb(231, 229, 229);
+        }
+
+        .inner-final {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .inner-final-icons i {
+            padding: 10px;
+            color: rgb(129, 128, 128);
+
+
+        }
+
+        .final-message input {
+            flex: 1;
+            width: 100%;
+            border: none;
+            outline: none;
+            margin-left: 20px;
+            background: transparent;
+            color: rgb(39, 38, 38);
+            font-size: 20px;
+        }
+
+        .mic {
+            margin: 15px;
+            color: rgb(129, 128, 128);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="head">
+                <div class="whats">
+                    <img src="/what'sapp Clone/images/what's app image.png" alt="whatup-icon" style="height: 25px; width: 25px;">
+                    <h4 class="WA">WhatsApp</h4>
+                </div>
+                <div class="head-icons">
+                    <i class="fa-solid fa-window-minimize"></i>
+                    <i class="fa-regular fa-square"></i>
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main">
+        <div class="left-side">
+            <div class="side-1">
+                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-message"></i>
+                <i class="fa-solid fa-phone"></i>
+                <i class="fa-solid fa-circle-notch"></i>
+                <img src="/what'sapp Clone/images/Meta-AI-Expasion_Header-removebg-preview.png" alt="whatup-icon"
+                    style="height: 40px; width: 40px;">
+            </div>
+            <div class="side-2">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-trash"></i>
+                <i class="fa-solid fa-gear"></i>
+                <img src="/what'sapp Clone/images/face photo.jpg" alt="whatup-icon" style="height: 50px; width: 40px;">
+            </div>
+        </div>
+        <div class="right-side">
+            <div class="first-right-side">
+                <div class="right-side-icons">
+                    <h2>Chats</h2>
+                    <div class="main-icons">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        <i class="fa-solid fa-bars bar-icon"></i>
+                    </div>
+                </div>
+                <div class="search-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search or start a new chart">
+                </div>
+                <div class="chart-icon">
+                    <div class="chart-img">
+                        <img src="/what'sapp Clone/images/face photo.jpg" alt="whatup-icon" style="height: 50px; width: 50px;">
+                        <div>
+                            <h5>Chamandi (you)</h5>
+                            <p>hi Ela vunnavu</p>
+                        </div>
+                    </div>
+                    <div class="time">
+                        <p>11:43</p>
+                    </div>
+                </div>
+                <div class="chart-icon">
+                    <div class="chart-img">
+                        <img src="/what'sapp Clone/images/download1.jpeg" alt="whatup-icon" style="height: 50px; width: 50px;">
+                        <div>
+                            <h5>Priyanka</h5>
+                            <p>I Love you </p>
+                        </div>
+                    </div>
+                    <div class="time">
+                        <p>10:43</p>
+                    </div>
+                </div>
+                <div class="chart-icon">
+                    <div class="chart-img">
+                        <img src="/what'sapp Clone/images/download6.jpeg" alt="whatup-icon" style="height: 50px; width: 50px;">
+                        <div>
+                            <h5>pavan</h5>
+                            <p>hi ra</p>
+                        </div>
+                    </div>
+                    <div class="time">
+                        <p>9:43</p>
+                    </div>
+                </div>
+                <div class="chart-icon">
+                    <div class="chart-img">
+                        <img src="/what'sapp Clone/images/download2.jpeg" alt="whatup-icon" style="height: 50px; width: 50px;">
+                        <div>
+                            <h5>Deepika</h5>
+                            <p>hi ra</p>
+                        </div>
+                    </div>
+                    <div class="time">
+                        <p>4:43</p>
+                    </div>
+                </div>
+                <div class="chart-icon">
+                    <div class="chart-img">
+                        <img src="/what'sapp Clone/images/download3.jpeg" alt="whatup-icon"
+                            style="height: 50px; width: 50px;">
+                        <div>
+                            <h5>Veeresh</h5>
+                            <p>call me</p>
+                        </div>
+                    </div>
+                    <div class="time">
+                        <p>5:43</p>
+                    </div>
+                </div>
+                <div class="chart-icon">
+                    <div class="chart-img">
+                        <img src="/what'sapp Clone/images/download5.jpeg" alt="whatup-icon"
+                            style="height: 50px; width: 50px;">
+                        <div>
+                            <h5>Vamshi</h5>
+                            <p>Hello</p>
+                        </div>
+                    </div>
+                    <div class="time">
+                        <p>10:43</p>
+                    </div>
+                </div>
+                <div class="chart-icon">
+                    <div class="chart-img">
+                        <img src="/what'sapp Clone/images/download4.jpeg" alt="whatup-icon"
+                            style="height: 50px; width: 50px;">
+                        <div>
+                            <h5>Manu</h5>
+                            <p>hi Maacha</p>
+                        </div>
+                    </div>
+                    <div class="time">
+                        <p>5:43</p>
+                    </div>
+                </div>
+            </div>
+            <div class="second-right-side">
+                <div class="chart-icon-2">
+                    <div class="chart-img">
+                        <img src="/what'sapp Clone/images/face photo.jpg" alt="whatup-icon" style="height: 50px; width: 50px;">
+                        <div class="matter-2">
+                            <h4>Chamandi (you)</h4>
+                            <p>message-yourself</p>
+                        </div>
+                    </div>
+                    <div class="time">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
+                <div class="center-box">
+                </div>
+                <div class="final-input">
+                    <div class="inner-final">
+                        <div class="inner-final-icons">
+                            <i class="fa-solid fa-face-smile"></i>
+                            <i class="fa-solid fa-plus"></i>
+                        </div>
+                        <div class="final-message">
+                            <input type="text" placeholder="Type a message">
+                        </div>
+                    </div>
+                    <div class="mic">
+                        <i class="fa-solid fa-microphone"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
