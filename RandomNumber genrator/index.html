@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Random number Genrator</h1>
+    <label>Please Enter min Number <input type="number" id="rand1"></label><br><br>
+    <label>Please Enter maximum Number <input type="number" id="rand2"></label><br><br>
+    <button type="button" onclick="RandomGenrator()">check</button>
+    <h3>result <span id="res"></span></h3>
+    <script>
+        function getNumber(max, min) {
+            return Math.floor( Math.random() * (max - min + 1)) + min;
+        }
+        function RandomGenrator() {
+            let num1 = parseFloat(document.getElementById("rand1").value);
+            let num2 = parseFloat(document.getElementById("rand2").value);
+
+            if (isNaN(num1) || isNaN(num2)) {
+                return document.getElementById('res').innerHTML = "enter a number";
+            }
+            if (num1 & num2 === "" || num1 === "" || num2 === ""){
+                return document.getElementById('res').innerHTML = "enter a number";
+            }
+            
+            if (num1 > num2) {
+                return document.getElementById('res').innerHTML = "check a min number";
+            }
+
+            let result = getNumber(num1, num2)
+
+            document.getElementById('res').innerHTML = "The Random Number is" + " " + result;
+        }
+    </script>
+</body>
+</html>
