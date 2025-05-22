@@ -23,10 +23,10 @@ async function checkWeather(city) {
     }
     else {
         let data = await response.json();
-        degree.innerHTML = Math.round(data.main.temp) + "°c";
-        discription.innerHTML = data.name;
-        wind.innerHTML = data.wind.speed + "km/h";
-        humidity.innerHTML = data.main.humidity + "%";
+        degree.textContent = Math.round(data.main.temp) + "°c";
+        discription.textContent = data.name;
+        wind.textContent = data.wind.speed + "km/h";
+        humidity.textContent = data.main.humidity + "%";
         switch (data.weather[0].main) {
             case 'Clouds':
                 weatherImg.src = "./images/clouds.png";
@@ -37,20 +37,19 @@ async function checkWeather(city) {
             case 'Rain':
                 weatherImg.src = "./images/Rain.png";
                 break;
-            case 'Drizzle':
+            case'Drizzle':
                 weatherImg.src = "./images/Drizzle.png";
                 break;
         }
         document.querySelector(".weather-body").style.display = "block";
         document.querySelector(".valid").style.display = "none";
-
     }
 
 }
 searchButton.addEventListener("click", () => {
     // const searchBox = document.querySelector(".search input");
-    const city = searchBox.value.trim();
-    if (city !== "") {
+    // const city = searchBox.value.trim();
+    if (searchBox.value !== "") {
         checkWeather(searchBox.value);
     }
     else {

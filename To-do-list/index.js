@@ -7,7 +7,7 @@ function addTask() {
     }
     else {
         let li = document.createElement("li");
-        li.innerHTML = inputBox.value;
+        li.textContent = inputBox.value;
         listContainer.appendChild(li);
         let span = document.createElement("span");
         span.innerHTML = "\u00d7";
@@ -29,7 +29,7 @@ listContainer.addEventListener("click", function (e) {
 }, false);
 
 function saveData(){
-    localStorage.setItem("data", listContainer.innerHTML);
+    localStorage.setItem("data", listContainer.textContent);
 }
 function showData(){
     listContainer.innerHTML = localStorage.getItem("data");

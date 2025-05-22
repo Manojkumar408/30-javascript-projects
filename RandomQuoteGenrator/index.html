@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quote of the Day</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(to bottom, #b5c6e0, #e6ecf3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .quote-box h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #222;
+        }
+
+        blockquote {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #444;
+            margin: 20px 0;
+        }
+
+        .author {
+            display: block;
+            margin-top: 10px;
+            font-style: italic;
+            color: #666;
+           text-align: end;
+        }
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        button,
+        #tweet {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 25px;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s ease;
+            text-decoration: none;
+        }
+
+        #tweet {
+            background: #fff;
+            color: #007bff;
+            border: 2px solid #007bff;
+        }
+
+        button:hover,
+        #tweet:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="quote-box">
+            <h2>Quote of the day</h2>
+            <blockquote id="quote">Loading...</blockquote>
+            <span class="author" id="author">Loading</span>
+            <div class="buttons">
+                <button onclick="getQuote()">New Quote</button>
+                <a href="#" id="tweet" target="_blank">Tweet</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const quoteText = document.getElementById("quote");
+        const authorText = document.getElementById("author");
+        const tweetBtn = document.getElementById("tweet");
+        const api_url = "https://dummyjson.com/quotes";
+        
+        async function getQuote() {
+            try {
+                const response = await fetch(api_url);
+                const data = await response.json();
+                
+                const randomIndex = Math.floor(Math.random() * data.quotes.length);
+                const quote = data.quotes[randomIndex];
+
+                quoteText.textContent = quote.quote;
+                authorText.textContent = quote.author;
+            }
+            catch (error) {
+                quoteText.textContent = "something went Wrong..";
+                authorText.textContent = " ";
+            }
+        }
+        getQuote();
+    </script>
+</body>
+
+</html>
