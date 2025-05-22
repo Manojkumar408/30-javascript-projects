@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            background: #1e1e1e;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 400px;
+            height: 350px;
+        }
+
+        .card h3 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .card input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .card button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4f46e5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .card button:hover {
+            background-color: #4338ca;
+        }
+
+        .qrImg {
+            display: none;
+            margin-left: 90px;
+            margin-bottom: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h3>Enter your text or URL</h3>
+            <input type="text" placeholder="Text or URL" id="input-Text" />
+            <div class="img-box">
+                <img src="" alt="img" class="qrImg">
+            </div>
+            <button id="btn" onclick="genrateQR() ">Generate QR Code</button>
+        </div>
+    </div>
+    <script>
+        qrText = document.getElementById("input-Text").value;
+        qrImage = document.querySelector(".qrImg");
+
+        function genrateQR() {
+            qrImage.style.display = "block";
+            qrImage.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Example" + qrText;
+        }
+    </script>
+</body>
+
+</html>
