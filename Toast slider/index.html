@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            background-color: #F8EFFF;
+        }
+
+        .container {
+            padding: 40px;
+        }
+
+        button {
+            background-color: black;
+            width: 200px;
+            height: 50px;
+            color: white;
+            font-size: 15px;
+        }
+
+        .toast-box {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            align-items: flex-end;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .toast {
+            width: 400px;
+            height: 80px;
+            background-color: #fff;
+            font-weight: 500px;
+            margin: 15px 0px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .toast.successfull {
+            border-left: 5px solid green;
+        }
+        .toast.error {
+            border-left: 5px solid red;
+        }
+
+        .toast.Invalid {
+            border-left: 5px solid orange;
+        }
+        .icon {
+           font-size: 25px;
+           padding-right: 10px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="buttons">
+            <button onclick="creatToast('successfull')">Success</button>
+            <button onclick="creatToast('error')">Error</button>
+            <button onclick="creatToast('Invalid')">Invalid</button>
+        </div>
+        <div class="toast-box">
+
+        </div>
+    </div>
+    <script>
+        let toastBox = document.querySelector(".toast-box");
+        
+        function creatToast(type) {
+            let toast = document.createElement('div');
+            toast.classList.add('toast');
+
+            if (type === 'successfull') {
+                toast.innerHTML = '<i class="fa-solid fa-circle-check icon"></i> Successfully Completed';
+            } else if (type === 'error') {
+                toast.innerHTML = '<i class="fa-solid fa-circle-xmark icon"></i> Something went wrong';
+            } else if (type === 'Invalid') {
+                toast.innerHTML = '<i class="fa-solid fa-circle-exclamation icon"></i> Enter Valid input';
+            } else {
+                toast.innerHTML = '<i class="fa-solid fa-info-circle icon"></i> Unknown type';
+            }
+
+            toastBox.appendChild(toast);
+
+            setTimeout(() => {
+                toast.remove();
+            }, 3000);
+
+            toast.classList.add(type);
+        }
+    </script>
+</body>
+
+</html>
