@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Password Input</title>
+        <link rel="stylesheet" href="styles.css">
+        <style>
+            body {
+                background-color: #1e1e1e;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                font-family: Arial, sans-serif;
+                margin: 0;
+            }
+
+            .container {
+                text-align: left;
+                color: white;
+            }
+
+            .password-box {
+                display: flex;
+                align-items: center;
+                background-color: #2a2a2a;
+                border-radius: 8px;
+                padding: 5px 10px;
+                width: 350px;
+                height: 40px;
+            }
+
+            .password-box input {
+                flex: 1;
+                border: none;
+                background: transparent;
+                color: white;
+                padding: 10px;
+                font-size: 14px;
+                outline: none;
+            }
+
+            .submit-btn {
+                background-color: white;
+                border: none;
+                border-radius: 50%;
+                width: 32px;
+                height: 32px;
+                font-size: 16px;
+                outline: none;
+                cursor: pointer;
+            }
+
+            .label {
+                margin-top: 10px;
+                font-size: 12px;
+                color: #ccc;
+                display: none;
+            }
+
+            .label {
+                font-size: 18px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="password-box">
+                <input type="password" placeholder="Password" class="password">
+                <button class="submit-btn" type="submit"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+            <p class="label">Password is strength :<span id="strength"></span></p>
+        </div>
+    </body>
+
+    <script>
+        
+        let btn = document.querySelector('.submit-btn');
+        let message = document.querySelector('.label');
+        let span = document.getElementById("strength");
+        let passBox = document.querySelector('.password-box');
+
+        btn.addEventListener('click', () => {
+            let pass = document.querySelector('.password').value;
+            if (pass.length > 0) {
+                message.style.display = "block";
+            }
+            else {
+                message.style.display = "none";
+            }
+
+
+            if (pass.length < 4) {
+                span.textContent = "weak";
+                passBox.style.borderColor = "red";
+                message.style.color = "red";
+            }
+            else if (pass.length > 4 && pass.length < 8) {
+                span.textContent = "Medium";
+                passBox.style.borderColor = "blue";
+                message.style.color = "blue";
+            }
+            else if (pass.length > 8) {
+                span.textContent = "strong";
+                passBox.style.borderColor = "green";
+                message.style.color = "green";
+            }
+
+        })
+    </script>
+
+    </html>
+
+</body>
+
+</html>
