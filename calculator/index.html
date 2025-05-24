@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator UI</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 25px;
+        }
+        body {
+            background: #cbe4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .calculator {
+            background: #2f3e4d;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .btn {
+            width: 60px;
+            height: 60px;
+            font-size: 20px;
+            color: #ffffff;
+            background-color: #3e4e5e;
+            border: none;
+            outline: none;
+            border-radius: 12px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            margin: 10px;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #4d6072;
+        }
+
+        .ac,
+        .de {
+            color: #00ffe1;
+            font-weight: bold;
+        }
+
+        .operator {
+            color: #00ffe1;
+        }
+
+        .input {
+            width: 100%;
+            height: 50px;
+            margin-bottom: 15px;
+            border: none;
+            outline: none;
+            font-size: 18px;
+        }
+
+        h1{
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        /* .equal {
+            grid-column: span 2;
+            background-color: #1a2a38;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Calculator</h1>
+        <div class="calculator">
+            <form>
+                <div class="display">
+                    <input type="text" name="display" class="input">
+                </div>
+                <div>
+                    <input type="button" value="Ac" class="btn" onclick="display.value = '' ">
+                    <input type="button" value="DE" class="btn" onclick="display.value = display.value.toString().slice(0, -1)">
+                    <input type="button" value="." class="btn" onclick="display.value = '.' ">
+                    <input type="button" value="/" class="btn" onclick="display.value = '/' ">
+                </div>
+                <div class="buttons">
+                    <input type="button" value="7" class="btn" onclick="display.value += '7' ">
+                    <input type="button" value="8" class="btn" onclick="display.value += '8' ">
+                    <input type="button" value="9" class="btn" onclick="display.value += '9' ">
+                    <input type="button" value="*" class="btn" onclick="display.value += '*' ">
+                </div>
+                <div class="buttons">
+                    <input type="button" value="4" class="btn" onclick="display.value += '4' ">
+                    <input type="button" value="5" class="btn" onclick="display.value += '5' ">
+                    <input type="button" value="6" class="btn" onclick="display.value += '6' ">
+                    <input type="button" value="-" class="btn" onclick="display.value += '-' ">
+                </div>
+                <div class="buttons">
+                    <input type="button" value="1" class="btn" onclick="display.value += '1' ">
+                    <input type="button" value="2" class="btn" onclick="display.value += '2' ">
+                    <input type="button" value="3" class="btn" onclick="display.value += '3' ">
+                    <input type="button" value="+" class="btn" onclick="display.value += '+' ">
+                </div>
+                <div class="buttons">
+                    <input type="button" value="00" class="btn" onclick="display.value += '00' ">
+                    <input type="button" value="0" class="btn" onclick="display.value += '0' ">
+                    <input type="button" value="=" class="btn" onclick="display.value = eval(display.value) ">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
