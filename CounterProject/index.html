@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-size: 25px;
+        }
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            text-align: center;
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Counter</h1>
+        <h1 class="count">0</h1>
+        <button class="inc">Increment</button>
+        <button class="dec">decrement</button>
+    </div>
+    <script>
+        let inc = document.querySelector(".inc");
+        let dec = document.querySelector(".dec");
+        let counter = document.querySelector(".count");
+        let count = 0;
+        inc.addEventListener('click', () => {
+            count++;
+            update()
+        })
+        dec.addEventListener('click', () => {
+            count--;
+            update()
+        })
+        function update() {
+            counter.textContent = count;
+            if(count>0){
+                counter.style.color = 'green';
+            }
+            else if(count<0){
+                counter.style.color = 'red';
+            }
+            else {
+                 counter.style.color = 'black';
+            }
+        }
+    </script>
+</body>
+
+</html>
