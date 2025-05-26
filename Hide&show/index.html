@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Toggle</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <style>
+        body {
+            background-color: #2e0066;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .input-container {
+            position: relative;
+            width: 300px;
+        }
+
+        .input-container input {
+            width: 85%;
+            padding: 12px 40px 12px 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        .input-container img {
+            position: absolute;
+            right: 12px;
+            top: 55%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #444;
+            width: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="input-container">
+        <input type="password" placeholder="password" id="password">
+        <img src="/Hide&show/images/eye-close.png" alt="images" id="toggleIcon">
+    </div>
+
+    <script>
+        let pass = document.getElementById('password');
+        let icon = document.getElementById('toggleIcon');
+
+        icon.addEventListener('click', () => {
+            if (password.type === "password") {
+                password.type = "text";
+                toggleIcon.src = "/Hide&show/images/eye-open.png";
+            }
+            else {
+                password.type = "password";
+                toggleIcon.src = "/Hide&show/images/eye-close.png";
+            }
+        });
+    </script>
+</body>
+
+</html>
