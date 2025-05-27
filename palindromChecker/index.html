@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Welcome to palindrom checker</h1>
+    <label>Enter The Word <input type="text" id="palin"></label><br><br>
+    <button type="button" onclick="palindromChecker()">Check</button>
+    <h4>Result <span id="check"></span></h4>
+    <script>
+        function stringChecker(str) {
+            return checker = str.split("").reverse("").join("");
+        }
+
+        function palindromChecker() {
+            let str = document.getElementById('palin').value.trim();
+            if (str === "") {
+                return document.getElementById('check').innerHTML = "Enter a Word";
+            }
+
+            let palindrom = stringChecker(str);
+
+            if (str === palindrom) {
+                document.getElementById("check").innerHTML = `"${str}" is palindrom `;
+            }
+            else {
+                document.getElementById("check").innerHTML = `"${str}" is not palindrom `;
+            }
+        }
+
+    </script>
+</body>
+
+</html>
