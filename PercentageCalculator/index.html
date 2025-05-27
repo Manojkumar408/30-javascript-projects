@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="percentage">
+        <h1>Welcome To Student Percentage Calculations</h1>
+        <label>Enter Student Name <input type="text" id="stu"></label><br><br>
+        <label>Maths <input type="text" id="stu1"></label><br><br>
+        <label>physics<input type="text" id="stu2"></label><br><br>
+        <label>chemisty<input type="text" id="stu3"></label><br><br>
+        <button type="button" onclick="percentageCalculation()">Check</button>
+
+    </div>
+    
+    <p id="res"></p>
+
+    <script>
+        function percentageCalculation() {
+            const Student = {
+                name: document.getElementById('stu').value,
+                marks: {
+                    maths: parseFloat(document.getElementById('stu1').value),
+                    physics: parseFloat(document.getElementById('stu2').value),
+                    chemisty: parseFloat(document.getElementById('stu3').value),
+                },
+                getPercentage: function () {
+                    let total = this.marks.maths + this.marks.physics + this.marks.chemisty;
+                    let percentage = (total / 300) * 100;
+                    return `student: ${this.name} percentage:${percentage.toFixed(2)}% `;
+                }
+            };
+            document.getElementById("res").innerHTML = Student.getPercentage();
+        }
+    </script>
+
+</body>
+
+</html>
